@@ -9,7 +9,7 @@ const login = async () => {}
 </script>
 
 <template>
-  <div class="w-9/12 m-auto rounded bg-slate-800 p-5 max-w-3xl">
+  <div>
     <form
       @submit.prevent="() => (isSignUp ? signUp() : login())"
       class="flex flex-col gap-2"
@@ -18,13 +18,13 @@ const login = async () => {}
         type="email"
         placeholder="Email"
         v-model="email"
-        class="p-2 bg-gray-600 rounded"
+        class="p-2 bg-gray-600 rounded text-white"
       >
       <input
         type="password"
         placeholder="Password"
         v-model="password"
-        class="p-2 bg-gray-600 rounded"
+        class="p-2 bg-gray-600 rounded text-white"
       >
       <button
         type="submit"

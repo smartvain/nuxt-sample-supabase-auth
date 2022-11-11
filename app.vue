@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4">
-    <NuxtPage />
-  </div>
+  <NuxtLayout >
+    <NuxtPage class="w-9/12 m-auto max-w-3xl pt-2" />
+  </NuxtLayout>
 </template>
