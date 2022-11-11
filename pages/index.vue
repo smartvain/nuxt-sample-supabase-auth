@@ -2,10 +2,33 @@
 const email = ref('')
 const password = ref('')
 const isSignUp = ref(false)
+const client = useSupabaseClient()
 
-const signUp = async () => {}
+const signUp = async () => {
+  const response = await client.auth.signUp({
+    email: email.value,
+    password: password.value,
+  })
 
-const login = async () => {}
+  console.log('signup response', response)
+}
+
+const login = async () => {
+  const response = await client.auth.signInWithPassword({
+    email: email.value,
+    password: password.value,
+  })
+  console.log('login response', response)
+}
+
+const user = useSupabaseUser()
+onMounted(() => {
+  watchEffect(() => {
+    if (user.value) {
+      navigateTo('/notes')
+    }
+  })
+})
 </script>
 
 <template>

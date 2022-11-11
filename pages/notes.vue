@@ -1,4 +1,16 @@
 <script setup lang="ts">
+definePageMeta({
+  middleware: ['auth'],
+})
+
+const user = useSupabaseUser()
+onMounted(() => {
+  watchEffect(() => {
+    if (!user.value) {
+      navigateTo('/')
+    }
+  })
+})
 </script>
 
 <template>
