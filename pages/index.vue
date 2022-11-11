@@ -9,7 +9,7 @@ const login = async () => {}
 </script>
 
 <template>
-  <div class="w-9/12 m-auto rounded bg-slate-800 p-5">
+  <div class="w-9/12 m-auto rounded bg-slate-800 p-5 max-w-3xl">
     <form
       @submit.prevent="() => (isSignUp ? signUp() : login())"
       class="flex flex-col gap-2"
