@@ -1,0 +1,45 @@
+<script setup lang="ts">
+const email = ref('')
+const password = ref('')
+const isSignUp = ref(false)
+
+const signUp = async () => {}
+
+const login = async () => {}
+</script>
+
+<template>
+  <div class="w-9/12 m-auto rounded bg-slate-800 p-5">
+    <form
+      @submit.prevent="() => (isSignUp ? signUp() : login())"
+      class="flex flex-col gap-2"
+    >
+      <input
+        type="email"
+        placeholder="Email"
+        v-model="email"
+        class="p-2 bg-gray-600 rounded"
+      >
+      <input
+        type="password"
+        placeholder="Password"
+        v-model="password"
+        class="p-2 bg-gray-600 rounded"
+      >
+      <button
+        type="submit"
+        class="p-2 text-white bg-green-500 rounded"
+      >
+        <span v-if="isSignUp"> Sign Up </span>
+        <span v-else> Log in </span>
+      </button>
+    </form>
+    <button
+      @click="isSignUp = !isSignUp"
+      class="w-full mt-8 text-sm text-center underline text-slate-300"
+    >
+      <span v-if="isSignUp"> Have an account? log in instead </span>
+      <span v-else> Create a new account </span>
+    </button>
+  </div>
+</template>
