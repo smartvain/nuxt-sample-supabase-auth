@@ -10,7 +10,6 @@ const data = [
 
 export default defineEventHandler(async (event) => {
   const user = await serverSupabaseUser(event)
-  console.log(user)
   if (!user) {
     throw createError({ statusCode: 401, message: 'Unauthorized' })
   }
